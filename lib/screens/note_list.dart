@@ -39,18 +39,34 @@ class NoteListState extends State<NoteList> {
             ? Container()
             : IconButton(
                 icon: Icon(
-                  Icons.search,
+                  Icons.menu,
                   color: Colors.black,
                 ),
-                onPressed: () async {
-                  final Note result = await showSearch(
-                      context: context, delegate: NotesSearch(notes: noteList));
-                  if (result != null) {
-                    navigateToDetail(result, 'Edit Note');
-                  }
-                },
+                // onPressed: () async {
+                //   final Note result = await showSearch(
+                //       context: context, delegate: NotesSearch(notes: noteList));
+                //   if (result != null) {
+                //     navigateToDetail(result, 'Edit Entry');
+                //   }
+                // },
               ),
         actions: <Widget>[
+          noteList.length == 0
+              ? Container()
+              : IconButton(
+                  icon: Icon(
+                    Icons.search,
+                    color: Colors.black,
+                  ),
+                  onPressed: () async {
+                    final Note result = await showSearch(
+                        context: context,
+                        delegate: NotesSearch(notes: noteList));
+                    if (result != null) {
+                      navigateToDetail(result, 'Edit Entry');
+                    }
+                  },
+                ),
           noteList.length == 0
               ? Container()
               : IconButton(
@@ -105,7 +121,7 @@ class NoteListState extends State<NoteList> {
       itemCount: count,
       itemBuilder: (BuildContext context, int index) => GestureDetector(
         onTap: () {
-          navigateToDetail(this.noteList[index], 'Edit Note');
+          navigateToDetail(this.noteList[index], 'Edit Entry');
         },
         child: Padding(
           padding: const EdgeInsets.all(8.0),

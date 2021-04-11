@@ -10,11 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   sqflite:
   path_provider:
   intl:
   flutter_staggered_grid_view:
+  heatmap_calendar: ^1.2.8
 
 dev_dependencies:
   flutter_test:

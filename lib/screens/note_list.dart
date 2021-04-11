@@ -8,6 +8,7 @@ import 'package:notes_app/screens/search_note.dart';
 import 'package:notes_app/utils/widgets.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:intl/intl.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class NoteList extends StatefulWidget {
   @override
@@ -34,7 +35,7 @@ class NoteListState extends State<NoteList> {
         title: Text('Entries', style: Theme.of(context).textTheme.headline),
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.lightBlueAccent,
         leading: noteList.length == 0
             ? Container()
             : IconButton(
@@ -72,7 +73,8 @@ class NoteListState extends State<NoteList> {
       appBar: myAppBar(),
       body: noteList.length == 0
           ? Container(
-              color: Colors.white,
+              //color: Colors.white,
+
               child: Center(
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -82,7 +84,17 @@ class NoteListState extends State<NoteList> {
               ),
             )
           : Container(
-              color: Colors.white,
+              //color: Colors.white,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin : Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.lightBlueAccent,
+                Colors.white10,
+              ],
+            )
+        ),
               child: getNotesList(),
             ),
       floatingActionButton: FloatingActionButton(
@@ -91,9 +103,12 @@ class NoteListState extends State<NoteList> {
           navigateToDetail(Note('', date, 2, 0), 'Add Entry');
         },
         tooltip: 'What did you accomplish?',
-        shape: CircleBorder(side: BorderSide(color: Colors.black, width: 2.0)),
-        child: Icon(Icons.add, color: Colors.black),
-        backgroundColor: Colors.white,
+        shape: CircleBorder(side: BorderSide(color: Colors.black.withOpacity(0.5), width: 2.0)),
+        child: Icon(Icons.add, color: Colors.blueGrey.withOpacity(0.5)),
+        elevation: 0,
+        backgroundColor: Colors.lightBlueAccent.withOpacity(0.2),
+
+
       ),
     );
   }

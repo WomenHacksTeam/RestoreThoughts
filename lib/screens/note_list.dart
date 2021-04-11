@@ -7,6 +7,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:notes_app/screens/search_note.dart';
 import 'package:notes_app/utils/widgets.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:intl/intl.dart';
 
 class NoteList extends StatefulWidget {
   @override
@@ -86,7 +87,8 @@ class NoteListState extends State<NoteList> {
             ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          navigateToDetail(Note('', '', 3, 0), 'Add Entry');
+          var date = DateFormat.yMMMd().format(DateTime.now());
+          navigateToDetail(Note('', date, 2, 0), 'Add Entry');
         },
         tooltip: 'What did you accomplish?',
         shape: CircleBorder(side: BorderSide(color: Colors.black, width: 2.0)),

@@ -10,11 +10,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^1.1.1
+
   sqflite:
   path_provider:
   intl:
   flutter_staggered_grid_view:
   heatmap_calendar: ^1.2.8
+  flutter_local_notifications: ^5.0.0+1
 
 dev_dependencies:
   flutter_test:

@@ -20,7 +20,7 @@ class NoteDetailState extends State<NoteDetail> {
   DatabaseHelper helper = DatabaseHelper();
 
   double _priority = 2;
-  List labels = ['Good ✨', 'Great 💎', 'Amazing 👑'];
+  List labels = ['Good ', 'Great ', 'Amazing '];
   DateTime _displayDate = DateTime.now();
   TextEditingController _controller;
 
@@ -64,7 +64,7 @@ class NoteDetailState extends State<NoteDetail> {
               appBarTitle,
               style: Theme.of(context).textTheme.headline,
             ),
-            backgroundColor: colors[color],
+            backgroundColor: Colors.lightBlueAccent,
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios, color: Colors.black),
                 onPressed: () {

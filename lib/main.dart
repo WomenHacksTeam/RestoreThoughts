@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/screens/note_list.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,14 +12,24 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'NoteKeeper',
       debugShowCheckedModeBanner: false,
+
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+
+        primarySwatch: Colors.lightBlue,
+        primaryColor: Colors.black,
+
+
         textTheme: TextTheme(
-          headline: TextStyle(
-              fontFamily: 'Sans',
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-              fontSize: 24),
+          headline: GoogleFonts.lobster(
+            fontWeight: FontWeight.bold,
+            color: Colors.black54,
+            fontSize: 36),
+          //TextStyle(
+             // fontFamily: GoogleFonts,
+
+              //fontWeight: FontWeight.bold,
+              //color: Colors.black,
+             // fontSize: 24),
           body1: TextStyle(
               fontFamily: 'Sans',
               fontWeight: FontWeight.bold,
